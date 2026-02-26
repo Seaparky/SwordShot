@@ -9,7 +9,7 @@
 
 
 
-class PauseUI
+class Pause
 {
 public:
 
@@ -17,14 +17,14 @@ public:
 	{
 		Tga::Sprite2DInstanceData myInstanceData = {};
 		Tga::SpriteSharedData mySharedData = {};
-		Tga::Vector2f myButtonMin = {0,0};
-		Tga::Vector2f myButtonMax = {0,0};
+		Tga::Vector2f myButtonMin = { 0,0 };
+		Tga::Vector2f myButtonMax = { 0,0 };
 		float myHalfWidth;
 		float myHalfHeight;
 	};
 
-	static PauseUI& GetInstance();
-	~PauseUI();
+	static Pause& GetInstance();
+	~Pause();
 
 	bool GetActive();
 
@@ -32,17 +32,17 @@ public:
 	void Disable();
 
 	void Unpause();
-	void Menu(bool& aMenu);
+	void Menu();
 	void Quit();
 
 	void Render();
 
-	void Update(Tga::InputManager& aInput, bool& aMenu);
+	void Update(Tga::InputManager& aInput);
 
 
 
 private:
-	PauseUI();
+	Pause();
 
 	bool myEnabled = false;
 

@@ -13,9 +13,6 @@
     <Filter Include="Player">
       <UniqueIdentifier>{724E55CA-5EF0-7FA0-47AB-93F433EC06F1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="UI">
-      <UniqueIdentifier>{83755900-6F01-880B-D8AF-880BC45A880B}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\Game\source\Collisions\AABB3D.h">
@@ -59,11 +56,9 @@
     <ClInclude Include="..\Source\Game\source\LinearAlg\Vector4.h">
       <Filter>LinearAlg</Filter>
     </ClInclude>
+    <ClInclude Include="..\Source\Game\source\Pause.h" />
     <ClInclude Include="..\Source\Game\source\Player\Player.h">
       <Filter>Player</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Source\Game\source\UI\PauseUI.h">
-      <Filter>UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -72,11 +67,9 @@
     </ClCompile>
     <ClCompile Include="..\Source\Game\source\GameWorld.cpp" />
     <ClCompile Include="..\Source\Game\source\Go.cpp" />
+    <ClCompile Include="..\Source\Game\source\Pause.cpp" />
     <ClCompile Include="..\Source\Game\source\Player\Player.cpp">
       <Filter>Player</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Source\Game\source\UI\PauseUI.cpp">
-      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

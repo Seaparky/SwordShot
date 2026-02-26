@@ -2,8 +2,10 @@
 
 #include <tge/sprite/sprite.h>
 #include <tge/input/InputManager.h>
+#include "Pause.h"
+#include "Player/Player.h"
 #include <vector>
-#include <thread>
+
 
 struct RenderCommand
 {
@@ -17,7 +19,6 @@ public:
 	GameWorld(); 
 	~GameWorld();
 
-	void SHUTDOWNPLXPLOX();
 
 	void Init();
 	void Update(float aTimeDelta, Tga::InputManager& aInput);
@@ -28,11 +29,7 @@ private:
 	Tga::Sprite2DInstanceData myTGELogoInstance = {};
 	Tga::SpriteSharedData mySharedData = {};
 
-	std::vector<RenderCommand> myFirstRenderThread;
-	std::vector<RenderCommand> mySecondRenderThread;
-
-	std::vector<RenderCommand>* myRenderCommandPointer = &myFirstRenderThread;
-	std::vector<RenderCommand>* myUpdateCommandPointer = &mySecondRenderThread;
-
+	Player* myPlayer;
+	Pause* myPause;
 
 };

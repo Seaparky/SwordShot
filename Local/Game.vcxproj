@@ -171,17 +171,15 @@
     <ClInclude Include="..\Source\Game\source\LinearAlg\Vector2.h" />
     <ClInclude Include="..\Source\Game\source\LinearAlg\Vector3.h" />
     <ClInclude Include="..\Source\Game\source\LinearAlg\Vector4.h" />
+    <ClInclude Include="..\Source\Game\source\Pause.h" />
     <ClInclude Include="..\Source\Game\source\Player\Player.h" />
-    <ClInclude Include="..\Source\Game\source\UI\PauseUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Game\source\Enemy\Enemy.cpp" />
     <ClCompile Include="..\Source\Game\source\GameWorld.cpp" />
     <ClCompile Include="..\Source\Game\source\Go.cpp" />
-    <ClCompile Include="..\Source\Game\source\Player\Player.cpp">
-      <ObjectFileName>$(IntDir)\Player1.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\Source\Game\source\UI\PauseUI.cpp" />
+    <ClCompile Include="..\Source\Game\source\Pause.cpp" />
+    <ClCompile Include="..\Source\Game\source\Player\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="External.vcxproj">

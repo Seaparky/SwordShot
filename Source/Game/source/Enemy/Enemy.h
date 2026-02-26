@@ -5,5 +5,15 @@ using namespace nlohmann;
 
 class Enemy
 {
+public:
+
+
+
+
+private:
+
+
+
+
 };
 

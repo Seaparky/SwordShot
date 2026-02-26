@@ -64,19 +64,14 @@ void Go()
 		gameWorld.Init();
 
 		Tga::Engine& engine = *Tga::Engine::GetInstance();
-		std::thread updateThread(UpdateGameworld, std::ref(gameWorld));
 		while (engine.BeginFrame())
 		{
+			inputManager.Update();
+			gameWorld.Update(engine.GetDeltaTime(),inputManager);
 			gameWorld.Render();
 			engine.EndFrame();
 		}
-		updateRunning = false;
-		gameWorld.SHUTDOWNPLXPLOX();
-		while (updateThread.joinable() == false)
-		{
-		}
 
-		updateThread.join();
 	}
 
 	Tga::Engine::GetInstance()->Shutdown();

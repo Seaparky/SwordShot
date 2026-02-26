@@ -1,49 +1,48 @@
-#include "PauseUI.h"
+#include "Pause.h"
 
-PauseUI& PauseUI::GetInstance()
+Pause& Pause::GetInstance()
 {
-	static PauseUI instance;
+	static Pause instance;
 	return instance;
 }
 
-PauseUI::~PauseUI()
+Pause::~Pause()
 {
 }
 
 
-bool PauseUI::GetActive()
+bool Pause::GetActive()
 {
 	return myEnabled;
 }
 
-void PauseUI::Enable()
+void Pause::Enable()
 {
 	myEnabled = true;
 }
 
-void PauseUI::Disable()
+void Pause::Disable()
 {
 	myEnabled = false;
 }
 
-void PauseUI::Unpause()
+void Pause::Unpause()
 {
-
 	if (mousePos.x < myScreenButtons[0].myButtonMin.x)
 	{
 		std::cout << "Hit too left" << std::endl;
 	}
-	if (mousePos.y < myScreenButtons[0].myButtonMin.y)
+	else if (mousePos.y < myScreenButtons[0].myButtonMin.y)
 	{
 		std::cout << "Hit too low" << std::endl;
 	}
-	if (mousePos.x > myScreenButtons[0].myButtonMax.x)
+	else if (mousePos.x > myScreenButtons[0].myButtonMax.x)
 	{
 		std::cout << "Hit too right" << std::endl;
 		std::cout << mousePos.x << std::endl;
 		std::cout << myScreenButtons[0].myButtonMax.x << std::endl;
 	}
-	if (mousePos.y > myScreenButtons[0].myButtonMax.y)
+	else if (mousePos.y > myScreenButtons[0].myButtonMax.y)
 	{
 		std::cout << "Hit too high" << std::endl;
 		std::cout << mousePos.y << std::endl;
@@ -57,23 +56,23 @@ void PauseUI::Unpause()
 
 }
 
-void PauseUI::Menu(bool& aMenu)
+void Pause::Menu()
 {
 	if (mousePos.x < myScreenButtons[1].myButtonMin.x)
 	{
 		std::cout << "Hit too left" << std::endl;
 	}
-	if (mousePos.y < myScreenButtons[1].myButtonMin.y)
+	else if (mousePos.y < myScreenButtons[1].myButtonMin.y)
 	{
 		std::cout << "Hit too low" << std::endl;
 	}
-	if (mousePos.x > myScreenButtons[1].myButtonMax.x)
+	else if (mousePos.x > myScreenButtons[1].myButtonMax.x)
 	{
 		std::cout << "Hit too right" << std::endl;
 		std::cout << mousePos.x << std::endl;
 		std::cout << myScreenButtons[1].myButtonMax.x << std::endl;
 	}
-	if (mousePos.y > myScreenButtons[1].myButtonMax.y)
+	else if (mousePos.y > myScreenButtons[1].myButtonMax.y)
 	{
 		std::cout << "Hit too high" << std::endl;
 		std::cout << mousePos.y << std::endl;
@@ -81,29 +80,27 @@ void PauseUI::Menu(bool& aMenu)
 	}
 	else
 	{
-		aMenu = false;
 		std::cout << "Button hit" << std::endl;
 	}
-
 }
 
-void PauseUI::Quit()
+void Pause::Quit()
 {
 	if (mousePos.x < myScreenButtons[2].myButtonMin.x)
 	{
 		std::cout << "Hit too left" << std::endl;
 	}
-	if (mousePos.y < myScreenButtons[2].myButtonMin.y)
+	else if (mousePos.y < myScreenButtons[2].myButtonMin.y)
 	{
 		std::cout << "Hit too low" << std::endl;
 	}
-	if (mousePos.x > myScreenButtons[2].myButtonMax.x)
+	else if (mousePos.x > myScreenButtons[2].myButtonMax.x)
 	{
 		std::cout << "Hit too right" << std::endl;
 		std::cout << mousePos.x << std::endl;
 		std::cout << myScreenButtons[2].myButtonMax.x << std::endl;
 	}
-	if (mousePos.y > myScreenButtons[2].myButtonMax.y)
+	else if (mousePos.y > myScreenButtons[2].myButtonMax.y)
 	{
 		std::cout << "Hit too high" << std::endl;
 		std::cout << mousePos.y << std::endl;
@@ -117,7 +114,7 @@ void PauseUI::Quit()
 
 }
 
-void PauseUI::Render()
+void Pause::Render()
 {
 	for (const Button& var : myScreenButtons)
 	{
@@ -125,7 +122,7 @@ void PauseUI::Render()
 	}
 }
 
-void PauseUI::Update(Tga::InputManager& aInput, bool& aMenu)
+void Pause::Update(Tga::InputManager& aInput)
 {
 	mousePos = aInput.GetMousePosition();
 
@@ -141,33 +138,31 @@ void PauseUI::Update(Tga::InputManager& aInput, bool& aMenu)
 	{
 		mousePos.y = 900 - mousePos.y;
 		Unpause();
-		Menu(aMenu);
+		Menu();
 		Quit();
+	}
+
+	if (aInput.IsKeyPressed(VK_ESCAPE))
+	{
+		Disable();
 	}
 }
 
-PauseUI::PauseUI()
+Pause::Pause()
 {
 	myCurrentEngine = Tga::Engine::GetInstance();
 	mySpriteDrawer = &myCurrentEngine->GetGraphicsEngine().GetSpriteDrawer();
 
-	//for (int i = 0; i < myScreenButtons.size();)
-	//{
-	//	myScreenButtons[i].mySharedData.myTexture = myCurrentEngine->GetTextureManager().GetTexture("Sprites/Restart.dds");
-	//	myScreenButtons[i].myHalfHeight = myScreenButtons[i].myInstanceData.mySize.y / 2;
-	//	myScreenButtons[i].myHalfWidth = myScreenButtons[i].myInstanceData.mySize.x / 2;
-	//}
 
-	for (Button& var : myScreenButtons)
-	{
-		var.mySharedData.myTexture = myCurrentEngine->GetTextureManager().GetTexture("UI/ButtonPlay.dds");
-	}
+	myScreenButtons[0].mySharedData.myTexture = myCurrentEngine->GetTextureManager().GetTexture("Sprites/Doggy.dds");
 	myScreenButtons[0].myInstanceData.myPosition = { 400,800 };
 	myScreenButtons[0].myInstanceData.mySize = { 200,200 };
 
+	myScreenButtons[1].mySharedData.myTexture = myCurrentEngine->GetTextureManager().GetTexture("UI/ButtonMainMenu.dds");
 	myScreenButtons[1].myInstanceData.myPosition = { 400,500 };
 	myScreenButtons[1].myInstanceData.mySize = { 200,200 };
 
+	myScreenButtons[2].mySharedData.myTexture = myCurrentEngine->GetTextureManager().GetTexture("UI/ButtonQuit.dds");
 	myScreenButtons[2].myInstanceData.myPosition = { 400,200 };
 	myScreenButtons[2].myInstanceData.mySize = { 200,200 };
 
