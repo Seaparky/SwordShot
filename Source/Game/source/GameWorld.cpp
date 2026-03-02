@@ -7,10 +7,12 @@
 #include <tge/engine.h>
 #include <atomic>
 #include <condition_variable>
+#include "LinearAlg/Matrix3x3.h"
+#include "LinearAlg/Vector3.h"
 
 using namespace Tga;
 
-
+CommonUtilities::Matrix3x3<float> cameraSpaceMatrix;
 
 GameWorld::GameWorld()
 {
@@ -54,7 +56,11 @@ void GameWorld::Update(float aTimeDelta, Tga::InputManager& aInput)
 
 	myPlayer->Update(aTimeDelta, aInput);
 
-	
+	cameraSpaceMatrix.myRow3 = CommonUtilities::Vector3<float>(myPlayer->GetPos().x * -1.0f, myPlayer->GetPos().y * -1.0f, 1);
+
+	cameraSpaceMatrix.myRow3.x += Tga::Engine::GetInstance()->GetWindowSize().x / 2;
+	cameraSpaceMatrix.myRow3.y += Tga::Engine::GetInstance()->GetWindowSize().y / 2;
+
 	if (aInput.IsKeyPressed(VK_ESCAPE))
 	{
 		std::cout << "Paused" << std::endl;
@@ -70,7 +76,7 @@ void GameWorld::Render()
 		myPause->Render();
 	}
 
-	myPlayer->Render();
+	myPlayer->Render(cameraSpaceMatrix);
 
 
 }

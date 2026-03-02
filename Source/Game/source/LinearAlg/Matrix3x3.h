@@ -12,6 +12,7 @@ namespace CommonUtilities
 	class Matrix3x3
 	{
 	public:
+#pragma warning( disable :4201) // Nonstandard nameless struct/union.
 		union
 		{
 			struct
