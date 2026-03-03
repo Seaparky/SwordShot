@@ -42,7 +42,7 @@ Player::Player()
         myVisual.myInstanceData.myColor = { 1,1,1 };
         myVisual.myInstanceData.myPivot = { 0.5f,0.5f };
         myVisual.myInstanceData.mySize = myVisual.mySharedData.myTexture->CalculateTextureSize();
-        myVisual.myInstanceData.mySize *= {2};
+        myVisual.myInstanceData.mySize *= {4};
     }
 
     {
@@ -53,20 +53,20 @@ Player::Player()
 
 void Player::Movement(float aTimeDelta, Tga::InputManager& aInput)
 {
-    if (aInput.IsKeyHeld('A'))
+    if (aInput.IsKeyHeld('A') || aInput.IsKeyHeld(VK_LEFT))
     {
-        myPosition.x -= 100 * aTimeDelta;
+        myPosition.x -= 400 * aTimeDelta;
     }
-    if (aInput.IsKeyHeld('D'))
+    if (aInput.IsKeyHeld('D') || aInput.IsKeyHeld(VK_RIGHT))
     {
-        myPosition.x += 100 * aTimeDelta;
+        myPosition.x += 400 * aTimeDelta;
     }
-    if (aInput.IsKeyHeld('W'))
+    if (aInput.IsKeyHeld('W') || aInput.IsKeyHeld(VK_UP))
     {
-        myPosition.y += 100 * aTimeDelta;
+        myPosition.y += 400 * aTimeDelta;
     }    
-    if (aInput.IsKeyHeld('S'))
+    if (aInput.IsKeyHeld('S') || aInput.IsKeyHeld(VK_DOWN))
     {
-        myPosition.y -= 100 * aTimeDelta;
+        myPosition.y -= 400 * aTimeDelta;
     }
 }

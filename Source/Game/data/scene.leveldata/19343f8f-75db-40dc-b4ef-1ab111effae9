@@ -1,0 +1,42 @@
+{
+  "name": "MaterialTest(67)",
+  "object-definition": "MaterialTest",
+  "path": "",
+  "properties": [
+    {
+      "name": "SpriteModel",
+      "type": "Sprite",
+      "value": {
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "size": [
+          100.0,
+          100.0
+        ],
+        "textures": [
+          "Environment\\Tiles\\tile_0072.png",
+          "",
+          "",
+          ""
+        ]
+      }
+    }
+  ],
+  "rotation": [
+    0.0,
+    -0.0,
+    0.0
+  ],
+  "scale": [
+    0.9999998807907104,
+    1.0,
+    0.9999998807907104
+  ],
+  "translation": [
+    1000.0,
+    0.0,
+    84.13243103027344
+  ]
+}

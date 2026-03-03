@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Retail|x64">
+      <Configuration>Retail</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2713F502-13E0-4F0E-3CF9-3DB62825859C}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>TGEditor</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Retail|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\Bin\</OutDir>
+    <IntDir>..\Temp\TGEditor\Debug\</IntDir>
+    <TargetName>TGEditor_Debug</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\Bin\</OutDir>
+    <IntDir>..\Temp\TGEditor\Release\</IntDir>
+    <TargetName>TGEditor_Release</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">
+    <OutDir>..\Bin\</OutDir>
+    <IntDir>..\Temp\TGEditor\Retail\</IntDir>
+    <TargetName>TGEditor_Retail</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>_CONSOLE;_DEBUG;WIN32;_LIB;TGE_SYSTEM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Source\Engine;..\Source\Editor\TGEscript;..\Source\External;..\Source\External\ffmpeg-2.0;..\Source\External\spdlog\include;..\Source\External\imgui;..\Source\External\ImGuizmo;..\Source\Editor\TGEditor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/Gm- /Gy /Gw %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>Comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Dependencies;..\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>_CONSOLE;_RELEASE;WIN32;_LIB;TGE_SYSTEM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Source\Engine;..\Source\Editor\TGEscript;..\Source\External;..\Source\External\ffmpeg-2.0;..\Source\External\spdlog\include;..\Source\External\imgui;..\Source\External\ImGuizmo;..\Source\Editor\TGEditor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalOptions>/Gm- /Gy /Gw %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>Comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Dependencies;..\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <PreprocessorDefinitions>_CONSOLE;_Retail;WIN32;_LIB;TGE_SYSTEM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Source\Engine;..\Source\Editor\TGEscript;..\Source\External;..\Source\External\ffmpeg-2.0;..\Source\External\spdlog\include;..\Source\External\imgui;..\Source\External\ImGuizmo;..\Source\Editor\TGEditor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>Comdlg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Dependencies;..\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\Editor\TGEditor\AnimationClip\AnimationClipDocument.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\AnimationClip\Commands\ChangeAnimationClipCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Commands\AddSceneObjectsCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Commands\RemoveSceneObjectsCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Commands\SceneCommandBase.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Commands\TransformCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Document\Document.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Editor.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\EditorConfiguration.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\FileDialog\FileDialog.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Gizmos\Gizmos.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\GoEditor.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ObjectDefinition\Commands\ChangePropertiesCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ObjectDefinition\ObjectDefinitionDocument.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Scene\ActiveScene.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Scene\EditorSceneManager.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Scene\SceneDocument.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Scene\SceneSelection.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Scene\SceneUtil.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateLinkCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateNodeCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateScriptCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\DestroyNodeAndLinksCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\FixupSelectionCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\MoveNodesCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\SetOverridenValueCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\ScriptEditor.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\ScriptEditorCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\ScriptEditorSelection.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\AssetBrowser\AssetBrowser.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\Navmesh\NavmeshCreationTool.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\ProjectRunControls\ProjectRunControls.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\SceneObjectList\SceneObjectList.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangePropertyOverridesCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangeSceneObjectFolderCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangeSceneObjectNameCommand.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\SceneObjectProperties.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\ToolsInterface.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\Viewport\Viewport.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\ViewportGrid\ViewportGrid.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\imgui_widgets\imgui_widgets.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\p4\p4.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Editor\TGEditor\AnimationClip\AnimationClipDocument.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\AnimationClip\Commands\ChangeAnimationClipCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Commands\AddSceneObjectsCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Commands\RemoveSceneObjectsCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Commands\TransformCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Document\Document.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Editor.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\FileDialog\FileDialog.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Gizmos\Gizmos.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\GoEditor.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ObjectDefinition\Commands\ChangePropertiesCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ObjectDefinition\ObjectDefinitionDocument.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Scene\ActiveScene.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Scene\EditorSceneManager.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Scene\SceneDocument.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Scene\SceneSelection.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Scene\SceneUtil.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateLinkCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateNodeCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateScriptCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\DestroyNodeAndLinksCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\FixUpSelectionCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\MoveNodesCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\SetOverridenValueCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\ScriptEditor.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\ScriptEditorCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\AssetBrowser\AssetBrowser.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\Navmesh\NavmeshCreationTool.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\ProjectRunControls\ProjectRunControls.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\SceneObjectList\SceneObjectList.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangePropertyOverridesCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangeSceneObjectFolderCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangeSceneObjectNameCommand.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\SceneObjectProperties.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\Viewport\Viewport.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\ViewportGrid\ViewportGrid.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\imgui_widgets\imgui_widgets.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\p4\p4.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Engine.vcxproj">
+      <Project>{DBC7D3B0-C769-FE86-B024-12DB9C6585D7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="External.vcxproj">
+      <Project>{089DB854-F469-1360-1D83-010809AF48EE}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -5,36 +5,23 @@
       "description": "",
       "group": "",
       "is-dynamic": false,
-      "is-per-instance": false,
-      "name": "Model",
-      "type": "Model",
+      "is-per-instance": true,
+      "name": "SpriteModel",
+      "type": "Sprite",
       "value": {
-        "path": "models\\MaterialTest\\SM_RougnessBalls.fbx",
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "size": [
+          100.0,
+          100.0
+        ],
         "textures": [
-          [
-            "models\\MaterialTest\\T_Black_c.dds",
-            "",
-            "models\\MaterialTest\\T_RoughnessValues_m.dds",
-            ""
-          ],
-          [
-            "models\\MaterialTest\\T_White_c.dds",
-            "",
-            "models\\MaterialTest\\T_RoughnessValues_m.dds",
-            ""
-          ],
-          [
-            "models\\MaterialTest\\T_White_c.dds",
-            "",
-            "models\\MaterialTest\\T_MetallicValues_m.dds",
-            ""
-          ],
-          [
-            "",
-            "",
-            "",
-            ""
-          ]
+          "Environment\\tilemap_packed.png",
+          "",
+          "",
+          ""
         ]
       }
     }

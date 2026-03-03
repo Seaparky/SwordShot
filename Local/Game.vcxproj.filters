@@ -7,11 +7,17 @@
     <Filter Include="Enemy">
       <UniqueIdentifier>{C3A81D0D-2FBD-45BE-F83E-E91D641242EF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="EnvironmentObjs">
+      <UniqueIdentifier>{0898ADEB-7423-1BB0-7D34-9EA4E93E77B0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="LinearAlg">
       <UniqueIdentifier>{94784874-00E3-FCEA-4921-AE90B5CADA3F}</UniqueIdentifier>
     </Filter>
     <Filter Include="Player">
       <UniqueIdentifier>{724E55CA-5EF0-7FA0-47AB-93F433EC06F1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{83755900-6F01-880B-D8AF-880BC45A880B}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +45,9 @@
     <ClInclude Include="..\Source\Game\source\Enemy\Enemy.h">
       <Filter>Enemy</Filter>
     </ClInclude>
+    <ClInclude Include="..\Source\Game\source\EnvironmentObjs\EnvironmentObject.h">
+      <Filter>EnvironmentObjs</Filter>
+    </ClInclude>
     <ClInclude Include="..\Source\Game\source\GameWorld.h" />
     <ClInclude Include="..\Source\Game\source\Go.h" />
     <ClInclude Include="..\Source\Game\source\LinearAlg\Matrix3x3.h">
@@ -56,20 +65,27 @@
     <ClInclude Include="..\Source\Game\source\LinearAlg\Vector4.h">
       <Filter>LinearAlg</Filter>
     </ClInclude>
-    <ClInclude Include="..\Source\Game\source\Pause.h" />
     <ClInclude Include="..\Source\Game\source\Player\Player.h">
       <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Game\source\UI\Pause.h">
+      <Filter>UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Game\source\Enemy\Enemy.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="..\Source\Game\source\EnvironmentObjs\EnvironmentObject.cpp">
+      <Filter>EnvironmentObjs</Filter>
+    </ClCompile>
     <ClCompile Include="..\Source\Game\source\GameWorld.cpp" />
     <ClCompile Include="..\Source\Game\source\Go.cpp" />
-    <ClCompile Include="..\Source\Game\source\Pause.cpp" />
     <ClCompile Include="..\Source\Game\source\Player\Player.cpp">
       <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Game\source\UI\Pause.cpp">
+      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

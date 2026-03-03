@@ -9,6 +9,11 @@
 #include <condition_variable>
 #include "LinearAlg/Matrix3x3.h"
 #include "LinearAlg/Vector3.h"
+#include "../../Editor/TGEditor/Scene/SceneUtil.h"
+#include "tge/scene/SceneSerialize.h"
+#include <tge/scene/SceneObjectDefinitionManager.h>
+#include <tge/settings/settings.h>
+
 
 using namespace Tga;
 
@@ -25,7 +30,6 @@ GameWorld::~GameWorld()
 }
 
 
-
 void GameWorld::Init()
 {
 	Tga::Engine& engine = *Tga::Engine::GetInstance();
@@ -40,6 +44,8 @@ void GameWorld::Init()
 		myTGELogoInstance.mySize = Tga::Vector2f{ 0.75f, 0.75f }*resolution.y;
 		myTGELogoInstance.myColor = Tga::Color(1, 1, 1, 1);
 	}
+
+	LoadEnvironment();
 
 }
 
@@ -71,12 +77,38 @@ void GameWorld::Update(float aTimeDelta, Tga::InputManager& aInput)
 
 void GameWorld::Render()
 {
+
+	for (BackgroundObject obj : myEnvironmentBackground)
+	{
+		obj.Render(cameraSpaceMatrix);
+	}
+
+	myPlayer->Render(cameraSpaceMatrix);
+
 	if (myPause->GetActive())
 	{
 		myPause->Render();
 	}
 
-	myPlayer->Render(cameraSpaceMatrix);
+}
 
+void GameWorld::LoadEnvironment()
+{
+	SceneObjectDefinitionManager aSceneObjectDefinitionManager;
+	LoadScene("scene.Tgs", myEnvironment);
+	aSceneObjectDefinitionManager.Init(Settings::GameAssetRoot().string().c_str());
+
+	std::vector<Tga::ScenePropertyDefinition> sceneObjectProperties;
+
+	for (const auto& sceneObject : myEnvironment.GetSceneObjects())
+	{
+		sceneObjectProperties.clear();
+		sceneObject.second->CalculateCombinedPropertySet(aSceneObjectDefinitionManager, sceneObjectProperties);
+
+		BackgroundObject obj;
+		obj.Initialize(*sceneObject.second, sceneObjectProperties);
+		myEnvironmentBackground.push_back(obj);
+
+	}
 
 }

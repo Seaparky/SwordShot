@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="AnimationClip">
+      <UniqueIdentifier>{CDEFACD6-39B0-280D-02EB-718A6E6A6DE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AnimationClip\Commands">
+      <UniqueIdentifier>{AEA1E1D0-9A9B-0A23-8308-A1336FA1708F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{17269CB7-03F3-F6C2-2C0C-E56A18382C51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Document">
+      <UniqueIdentifier>{4498218D-3065-7C98-597E-6A4045AAB126}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileDialog">
+      <UniqueIdentifier>{55915DC8-4149-9F15-AA50-787196273A06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gizmos">
+      <UniqueIdentifier>{FE1A2EB5-EABC-588B-D377-6CDFBFB8DFDB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectDefinition">
+      <UniqueIdentifier>{45D8C9FD-31D1-E84F-5A03-CED4465BC85B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectDefinition\Commands">
+      <UniqueIdentifier>{2691F72F-9253-2BBA-DB03-BA4647050498}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{B3F7140E-1F0C-3DBF-E88D-E01E546139F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptEditor">
+      <UniqueIdentifier>{E1DC9444-CD3F-24E9-76C5-5C9F6207F06B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScriptEditor\Commands">
+      <UniqueIdentifier>{4285D7EB-AEF1-92E6-77E5-2A44E310B54E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{16CF2D0E-82E3-55BF-4B65-F91EB73852F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\AssetBrowser">
+      <UniqueIdentifier>{A9D9859C-95BD-46F2-FE1D-4145EA203174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\Navmesh">
+      <UniqueIdentifier>{D74F6C4C-4310-E882-0C4B-310078CA2C5F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\ProjectRunControls">
+      <UniqueIdentifier>{2511B7F6-1136-0677-3A81-EB0626050595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\SceneObjectList">
+      <UniqueIdentifier>{C6E4399B-3251-F595-FB44-8DF3677017FE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\SceneObjectProperties">
+      <UniqueIdentifier>{57312301-C33E-51E7-4C25-4DD2B8311D9E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\Viewport">
+      <UniqueIdentifier>{0513EA7C-F1E0-DD82-DA74-4EA9C6E1B9E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools\ViewportGrid">
+      <UniqueIdentifier>{4BEF3E3A-37D3-FF8F-A033-FAE28C36EA11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui_widgets">
+      <UniqueIdentifier>{B649BA8B-220A-36C2-EB44-7F3F57C47A9E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="p4">
+      <UniqueIdentifier>{E9785900-D504-880B-3EB3-880B2A5E880B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\Editor\TGEditor\AnimationClip\AnimationClipDocument.h">
+      <Filter>AnimationClip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\AnimationClip\Commands\ChangeAnimationClipCommand.h">
+      <Filter>AnimationClip\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Commands\AddSceneObjectsCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Commands\RemoveSceneObjectsCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Commands\SceneCommandBase.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Commands\TransformCommand.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Document\Document.h">
+      <Filter>Document</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Editor.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\EditorConfiguration.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\FileDialog\FileDialog.h">
+      <Filter>FileDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Gizmos\Gizmos.h">
+      <Filter>Gizmos</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\GoEditor.h" />
+    <ClInclude Include="..\Source\Editor\TGEditor\ObjectDefinition\Commands\ChangePropertiesCommand.h">
+      <Filter>ObjectDefinition\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ObjectDefinition\ObjectDefinitionDocument.h">
+      <Filter>ObjectDefinition</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Scene\ActiveScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Scene\EditorSceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Scene\SceneDocument.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Scene\SceneSelection.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Scene\SceneUtil.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateLinkCommand.h">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateNodeCommand.h">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateScriptCommand.h">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\DestroyNodeAndLinksCommand.h">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\FixupSelectionCommand.h">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\MoveNodesCommand.h">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\SetOverridenValueCommand.h">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\ScriptEditor.h">
+      <Filter>ScriptEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\ScriptEditorCommand.h">
+      <Filter>ScriptEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\ScriptEditor\ScriptEditorSelection.h">
+      <Filter>ScriptEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\AssetBrowser\AssetBrowser.h">
+      <Filter>Tools\AssetBrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\Navmesh\NavmeshCreationTool.h">
+      <Filter>Tools\Navmesh</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\ProjectRunControls\ProjectRunControls.h">
+      <Filter>Tools\ProjectRunControls</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\SceneObjectList\SceneObjectList.h">
+      <Filter>Tools\SceneObjectList</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangePropertyOverridesCommand.h">
+      <Filter>Tools\SceneObjectProperties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangeSceneObjectFolderCommand.h">
+      <Filter>Tools\SceneObjectProperties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangeSceneObjectNameCommand.h">
+      <Filter>Tools\SceneObjectProperties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\SceneObjectProperties.h">
+      <Filter>Tools\SceneObjectProperties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\ToolsInterface.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\Viewport\Viewport.h">
+      <Filter>Tools\Viewport</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\Tools\ViewportGrid\ViewportGrid.h">
+      <Filter>Tools\ViewportGrid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\imgui_widgets\imgui_widgets.h">
+      <Filter>imgui_widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Editor\TGEditor\p4\p4.h">
+      <Filter>p4</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\Editor\TGEditor\AnimationClip\AnimationClipDocument.cpp">
+      <Filter>AnimationClip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\AnimationClip\Commands\ChangeAnimationClipCommand.cpp">
+      <Filter>AnimationClip\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Commands\AddSceneObjectsCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Commands\RemoveSceneObjectsCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Commands\TransformCommand.cpp">
+      <Filter>Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Document\Document.cpp">
+      <Filter>Document</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Editor.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\FileDialog\FileDialog.cpp">
+      <Filter>FileDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Gizmos\Gizmos.cpp">
+      <Filter>Gizmos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\GoEditor.cpp" />
+    <ClCompile Include="..\Source\Editor\TGEditor\ObjectDefinition\Commands\ChangePropertiesCommand.cpp">
+      <Filter>ObjectDefinition\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\ObjectDefinition\ObjectDefinitionDocument.cpp">
+      <Filter>ObjectDefinition</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Scene\ActiveScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Scene\EditorSceneManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Scene\SceneDocument.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Scene\SceneSelection.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Scene\SceneUtil.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateLinkCommand.cpp">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateNodeCommand.cpp">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\CreateScriptCommand.cpp">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\DestroyNodeAndLinksCommand.cpp">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\FixUpSelectionCommand.cpp">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\MoveNodesCommand.cpp">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\Commands\SetOverridenValueCommand.cpp">
+      <Filter>ScriptEditor\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\ScriptEditor.cpp">
+      <Filter>ScriptEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\ScriptEditor\ScriptEditorCommand.cpp">
+      <Filter>ScriptEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\AssetBrowser\AssetBrowser.cpp">
+      <Filter>Tools\AssetBrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\Navmesh\NavmeshCreationTool.cpp">
+      <Filter>Tools\Navmesh</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\ProjectRunControls\ProjectRunControls.cpp">
+      <Filter>Tools\ProjectRunControls</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\SceneObjectList\SceneObjectList.cpp">
+      <Filter>Tools\SceneObjectList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangePropertyOverridesCommand.cpp">
+      <Filter>Tools\SceneObjectProperties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangeSceneObjectFolderCommand.cpp">
+      <Filter>Tools\SceneObjectProperties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\ChangeSceneObjectNameCommand.cpp">
+      <Filter>Tools\SceneObjectProperties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\SceneObjectProperties\SceneObjectProperties.cpp">
+      <Filter>Tools\SceneObjectProperties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\Viewport\Viewport.cpp">
+      <Filter>Tools\Viewport</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\Tools\ViewportGrid\ViewportGrid.cpp">
+      <Filter>Tools\ViewportGrid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\imgui_widgets\imgui_widgets.cpp">
+      <Filter>imgui_widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Editor\TGEditor\p4\p4.cpp">
+      <Filter>p4</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
