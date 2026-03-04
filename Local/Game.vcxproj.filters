@@ -71,6 +71,9 @@
     <ClInclude Include="..\Source\Game\source\UI\Pause.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="..\Source\Game\source\Player\Projectile.h">
+      <Filter>Player</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Game\source\Enemy\Enemy.cpp">
@@ -86,6 +89,9 @@
     </ClCompile>
     <ClCompile Include="..\Source\Game\source\UI\Pause.cpp">
       <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Game\source\Player\Projectile.cpp">
+      <Filter>Player</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

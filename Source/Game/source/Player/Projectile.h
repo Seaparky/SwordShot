@@ -5,32 +5,26 @@
 #include <tge/texture/TextureManager.h>
 #include <tge/drawers/SpriteDrawer.h>
 #include <tge/sprite/sprite.h>
-#include "nlohmann/json.hpp"
 #include "../LinearAlg/Vector2.h"
 #include "../LinearAlg/Matrix3x3.h"
 #include "../Collisions/Sphere.h"
 
-class Projectile;
-class GameWorld;
-
 using namespace CommonUtilities;
-using namespace nlohmann;
 
-
-class Player
+class Projectile
 {
 public:
 
-	static Player& GetInstance();
+	Projectile();
+	~Projectile();
 
-	void Update(float aTimeDelta, Tga::InputManager& aInput);
+	void Update(float aTimeDelta);
 
 	void Render(CommonUtilities::Matrix3x3<float> aCamera);
 
-	CommonUtilities::Vector2<float> GetPos();
+	void SetPos(CommonUtilities::Vector2<float> aNewPosition);
 
-	std::vector<Projectile*> mySwords;
-
+	void Activate();
 private:
 
 	struct VisualInfo
@@ -40,24 +34,11 @@ private:
 		Tga::SpriteSharedData mySharedData = {};
 	};
 
-	Player();
-
-	void Movement(float aTimeDelta, Tga::InputManager& aInput);
-
-	void Shoot();
-
-	json mySource;
+	VisualInfo myVisual;
 
 	CommonUtilities::Vector2<float> myPosition;
 	Sphere<float> myHitBox;
 
-	VisualInfo myVisual;
-
-	float mySpeed;
-
-	int CurrentProjectile;
-
-	GameWorld* EnemySource;
+	bool myActive = false;
 
 };
-

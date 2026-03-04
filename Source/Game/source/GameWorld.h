@@ -5,6 +5,7 @@
 #include <tge/scene/Scene.h>
 #include "UI/Pause.h"
 #include "Player/Player.h"
+#include "Player/Projectile.h"
 #include "EnvironmentObjs/EnvironmentObject.h"
 #include <vector>
 

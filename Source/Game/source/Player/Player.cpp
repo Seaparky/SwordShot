@@ -1,4 +1,6 @@
 #include "Player.h"
+#include "Projectile.h"
+#include "../GameWorld.h"
 #include "fstream"
 
 Player& Player::GetInstance()
@@ -13,8 +15,9 @@ void Player::Update(float aTimeDelta, Tga::InputManager& aInput)
     UNREFERENCED_PARAMETER(aInput);
 
     Movement(aTimeDelta, aInput);
-}
 
+    if (aInput.IsKeyPressed(VK_SPACE)) { Shoot(); }
+}
 
 void Player::Render(CommonUtilities::Matrix3x3<float> aCamera)
 {
@@ -49,6 +52,14 @@ Player::Player()
         myPosition = { myVisual.myInstanceData.myPosition.x ,myVisual.myInstanceData.myPosition.y };
     }
 
+    int i = 0;
+    while (i < 6)
+    {
+        Projectile* sword = new Projectile();
+        mySwords.push_back(sword);
+        i++;
+    }
+
 }
 
 void Player::Movement(float aTimeDelta, Tga::InputManager& aInput)
@@ -68,5 +79,42 @@ void Player::Movement(float aTimeDelta, Tga::InputManager& aInput)
     if (aInput.IsKeyHeld('S') || aInput.IsKeyHeld(VK_DOWN))
     {
         myPosition.y -= 400 * aTimeDelta;
+    }
+}
+
+void Player::Shoot()
+{
+    switch (CurrentProjectile)
+    {
+    case 0:
+        mySwords[0]->SetPos(myPosition);
+        mySwords[0]->Activate();
+        CurrentProjectile++;
+        break;    
+    case 1:
+        mySwords[1]->SetPos(myPosition);
+        mySwords[1]->Activate();
+        CurrentProjectile++;
+        break;    
+    case 2:
+        mySwords[2]->SetPos(myPosition);
+        mySwords[2]->Activate();
+        CurrentProjectile++;
+        break;    
+    case 3:
+        mySwords[3]->SetPos(myPosition);
+        mySwords[3]->Activate();
+        CurrentProjectile++;
+        break;    
+    case 4:
+        mySwords[4]->SetPos(myPosition);
+        mySwords[4]->Activate();
+        CurrentProjectile++;
+        break;    
+    case 5:
+        mySwords[5]->SetPos(myPosition);
+        mySwords[5]->Activate();
+        CurrentProjectile = 0;
+        break;
     }
 }

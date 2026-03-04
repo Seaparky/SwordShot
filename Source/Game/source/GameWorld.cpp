@@ -62,6 +62,11 @@ void GameWorld::Update(float aTimeDelta, Tga::InputManager& aInput)
 
 	myPlayer->Update(aTimeDelta, aInput);
 
+	for (Projectile* sword : myPlayer->mySwords)
+	{
+		sword->Update(aTimeDelta);
+	}
+
 	cameraSpaceMatrix.myRow3 = CommonUtilities::Vector3<float>(myPlayer->GetPos().x * -1.0f, myPlayer->GetPos().y * -1.0f, 1);
 
 	cameraSpaceMatrix.myRow3.x += Tga::Engine::GetInstance()->GetWindowSize().x / 2;
@@ -81,6 +86,11 @@ void GameWorld::Render()
 	for (BackgroundObject obj : myEnvironmentBackground)
 	{
 		obj.Render(cameraSpaceMatrix);
+	}
+
+	for (Projectile* sword : myPlayer->mySwords)
+	{
+		sword->Render(cameraSpaceMatrix);
 	}
 
 	myPlayer->Render(cameraSpaceMatrix);

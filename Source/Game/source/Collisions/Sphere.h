@@ -19,6 +19,7 @@ namespace CommonUtilities
         T GetRadius() const;
 
         inline bool IsInside(const Vector3<T>& aPoint) const;
+        inline bool IsInside(const Sphere<T>& aSphere) const;
     };
     template<typename T>
     inline Sphere<T>::Sphere()
@@ -54,6 +55,20 @@ namespace CommonUtilities
         Vector3<T> vectorBetween = aPoint - myCentre;
         T distanceBetween = vectorBetween.Length();
         if (distanceBetween <= myRadius)
+        {
+            return true;
+        }
+        return false;
+    }
+    template<typename T>
+    inline bool Sphere<T>::IsInside(const Sphere<T>& aSphere) const
+    {
+        Vector3<T> VectorBetween = myCentre - aSphere.GetCenter();
+        Vector3<T> distanceBetween = VectorBetween;
+
+        Vector3<T> RadiusSum = myRadius + aSphere.GetRadius();
+
+        if (distanceBetween <= RadiusSum)
         {
             return true;
         }

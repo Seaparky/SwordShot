@@ -1,6 +1,6 @@
-#include "Enemy.h"
+#include "Projectile.h"
 
-Enemy::Enemy()
+Projectile::Projectile()
 {
     myVisual.mySpriteDrawer = &Tga::Engine::GetInstance()->GetGraphicsEngine().GetSpriteDrawer();
 
@@ -16,21 +16,33 @@ Enemy::Enemy()
     {
         myPosition = { myVisual.myInstanceData.myPosition.x ,myVisual.myInstanceData.myPosition.y };
     }
+}
+
+Projectile::~Projectile()
+{
 
 }
 
-Enemy::~Enemy()
+void Projectile::Update(float aTimeDelta)
 {
+    if (!myActive) { return; }
+    myPosition.y += 650 * aTimeDelta;
 }
 
-void Enemy::Update(float aTimeDelta)
+void Projectile::Render(CommonUtilities::Matrix3x3<float> aCamera)
 {
-    UNREFERENCED_PARAMETER(aTimeDelta);
-}
-
-void Enemy::Render(CommonUtilities::Matrix3x3<float> aCamera)
-{
+    if (!myActive) { return; }
     CommonUtilities::Vector3<float> cameraPosition = CommonUtilities::Vector3<float>(myPosition.x, myPosition.y, 1) * aCamera;
     myVisual.myInstanceData.myPosition = CommonUtilities::Vector2<float>(cameraPosition.x, cameraPosition.y).ToTga();
     myVisual.mySpriteDrawer->Draw(myVisual.mySharedData, myVisual.myInstanceData);
+}
+
+void Projectile::SetPos(CommonUtilities::Vector2<float> aNewPosition)
+{
+    myPosition = aNewPosition;
+}
+
+void Projectile::Activate()
+{
+    myActive = true;
 }
