@@ -27,10 +27,3 @@ void Enemy::Update(float aTimeDelta)
 {
     UNREFERENCED_PARAMETER(aTimeDelta);
 }
-
-void Enemy::Render(CommonUtilities::Matrix3x3<float> aCamera)
-{
-    CommonUtilities::Vector3<float> cameraPosition = CommonUtilities::Vector3<float>(myPosition.x, myPosition.y, 1) * aCamera;
-    myVisual.myInstanceData.myPosition = CommonUtilities::Vector2<float>(cameraPosition.x, cameraPosition.y).ToTga();
-    myVisual.mySpriteDrawer->Draw(myVisual.mySharedData, myVisual.myInstanceData);
-}

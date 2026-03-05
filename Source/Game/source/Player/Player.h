@@ -5,6 +5,7 @@
 #include <tge/texture/TextureManager.h>
 #include <tge/drawers/SpriteDrawer.h>
 #include <tge/sprite/sprite.h>
+#include "../BaseClass/SpriteObject.h"
 #include "nlohmann/json.hpp"
 #include "../LinearAlg/Vector2.h"
 #include "../LinearAlg/Matrix3x3.h"
@@ -17,7 +18,7 @@ using namespace CommonUtilities;
 using namespace nlohmann;
 
 
-class Player
+class Player : public SpriteObject
 {
 public:
 
@@ -25,20 +26,11 @@ public:
 
 	void Update(float aTimeDelta, Tga::InputManager& aInput);
 
-	void Render(CommonUtilities::Matrix3x3<float> aCamera);
-
-	CommonUtilities::Vector2<float> GetPos();
+	CommonUtilities::Vector3<float> GetPos();
 
 	std::vector<Projectile*> mySwords;
 
 private:
-
-	struct VisualInfo
-	{
-		Tga::SpriteDrawer* mySpriteDrawer;
-		Tga::Sprite2DInstanceData myInstanceData = {};
-		Tga::SpriteSharedData mySharedData = {};
-	};
 
 	Player();
 
@@ -50,8 +42,6 @@ private:
 
 	CommonUtilities::Vector2<float> myPosition;
 	Sphere<float> myHitBox;
-
-	VisualInfo myVisual;
 
 	float mySpeed;
 

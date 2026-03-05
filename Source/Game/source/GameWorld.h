@@ -6,6 +6,7 @@
 #include "UI/Pause.h"
 #include "Player/Player.h"
 #include "Player/Projectile.h"
+#include "BaseClass/SpriteObject.h"
 #include "EnvironmentObjs/EnvironmentObject.h"
 #include <vector>
 
@@ -38,6 +39,8 @@ private:
 
 	Player* myPlayer;
 	Pause* myPause;
+
+	std::vector<SpriteObject> Sprites;
 
 	Tga::Scene myEnvironment;
 

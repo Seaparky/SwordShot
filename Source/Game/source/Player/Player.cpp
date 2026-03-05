@@ -19,16 +19,10 @@ void Player::Update(float aTimeDelta, Tga::InputManager& aInput)
     if (aInput.IsKeyPressed(VK_SPACE)) { Shoot(); }
 }
 
-void Player::Render(CommonUtilities::Matrix3x3<float> aCamera)
-{
-    CommonUtilities::Vector3<float> cameraPosition = CommonUtilities::Vector3<float>(myPosition.x, myPosition.y, 1) * aCamera;
-    myVisual.myInstanceData.myPosition = CommonUtilities::Vector2<float>(cameraPosition.x, cameraPosition.y).ToTga();
-    myVisual.mySpriteDrawer->Draw(myVisual.mySharedData, myVisual.myInstanceData);
-}
 
-CommonUtilities::Vector2<float> Player::GetPos()
+CommonUtilities::Vector3<float> Player::GetPos()
 {
-    return myPosition;
+    return myTransform.myRow3;
 }
 
 Player::Player()
@@ -49,7 +43,7 @@ Player::Player()
     }
 
     {
-        myPosition = { myVisual.myInstanceData.myPosition.x ,myVisual.myInstanceData.myPosition.y };
+        myTransform.myRow3 = { myVisual.myInstanceData.myPosition.x ,myVisual.myInstanceData.myPosition.y, 0 };
     }
 
     int i = 0;
@@ -66,19 +60,19 @@ void Player::Movement(float aTimeDelta, Tga::InputManager& aInput)
 {
     if (aInput.IsKeyHeld('A') || aInput.IsKeyHeld(VK_LEFT))
     {
-        myPosition.x -= 400 * aTimeDelta;
+        myTransform.myRow3.x -= 400 * aTimeDelta;
     }
     if (aInput.IsKeyHeld('D') || aInput.IsKeyHeld(VK_RIGHT))
     {
-        myPosition.x += 400 * aTimeDelta;
+        myTransform.myRow3.x += 400 * aTimeDelta;
     }
     if (aInput.IsKeyHeld('W') || aInput.IsKeyHeld(VK_UP))
     {
-        myPosition.y += 400 * aTimeDelta;
+        myTransform.myRow3.y += 400 * aTimeDelta;
     }    
     if (aInput.IsKeyHeld('S') || aInput.IsKeyHeld(VK_DOWN))
     {
-        myPosition.y -= 400 * aTimeDelta;
+        myTransform.myRow3.y -= 400 * aTimeDelta;
     }
 }
 
@@ -87,32 +81,32 @@ void Player::Shoot()
     switch (CurrentProjectile)
     {
     case 0:
-        mySwords[0]->SetPos(myPosition);
+        mySwords[0]->SetPos(myTransform.myRow3);
         mySwords[0]->Activate();
         CurrentProjectile++;
         break;    
     case 1:
-        mySwords[1]->SetPos(myPosition);
+        mySwords[1]->SetPos(myTransform.myRow3);
         mySwords[1]->Activate();
         CurrentProjectile++;
         break;    
     case 2:
-        mySwords[2]->SetPos(myPosition);
+        mySwords[2]->SetPos(myTransform.myRow3);
         mySwords[2]->Activate();
         CurrentProjectile++;
         break;    
     case 3:
-        mySwords[3]->SetPos(myPosition);
+        mySwords[3]->SetPos(myTransform.myRow3);
         mySwords[3]->Activate();
         CurrentProjectile++;
         break;    
     case 4:
-        mySwords[4]->SetPos(myPosition);
+        mySwords[4]->SetPos(myTransform.myRow3);
         mySwords[4]->Activate();
         CurrentProjectile++;
         break;    
     case 5:
-        mySwords[5]->SetPos(myPosition);
+        mySwords[5]->SetPos(myTransform.myRow3);
         mySwords[5]->Activate();
         CurrentProjectile = 0;
         break;

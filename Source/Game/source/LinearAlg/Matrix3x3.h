@@ -51,6 +51,7 @@ namespace CommonUtilities
 		Matrix3x3<T>& operator*=(const Matrix3x3& aOther);
 		Matrix3x3<T> operator*(const Matrix3x3& aOther) const;
 
+		Matrix3x3<T> operator-();
 
 		Matrix3x3<T> GetTranspose() const;
 	};
@@ -126,6 +127,12 @@ namespace CommonUtilities
 		m.m33 = aOther.myRow3.Dot(Vector3<T>{ m31, m32, m33 });
 
 		return m;
+	}
+
+	template<typename T>
+	inline Matrix3x3<T> Matrix3x3<T>::operator-()
+	{
+		return Matrix3x3<T>(-myRow1,-myRow2,-myRow3);
 	}
 
 	template<typename T>

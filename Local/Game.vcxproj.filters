@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="BaseClass">
+      <UniqueIdentifier>{F6F61E04-6261-D37A-AB9F-84201749B1CF}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Collisions">
       <UniqueIdentifier>{447108E9-3029-4A36-9930-23928507E526}</UniqueIdentifier>
     </Filter>
@@ -21,6 +24,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Source\Game\source\BaseClass\SpriteObject.h">
+      <Filter>BaseClass</Filter>
+    </ClInclude>
     <ClInclude Include="..\Source\Game\source\Collisions\AABB3D.h">
       <Filter>Collisions</Filter>
     </ClInclude>
@@ -68,14 +74,17 @@
     <ClInclude Include="..\Source\Game\source\Player\Player.h">
       <Filter>Player</Filter>
     </ClInclude>
-    <ClInclude Include="..\Source\Game\source\UI\Pause.h">
-      <Filter>UI</Filter>
-    </ClInclude>
     <ClInclude Include="..\Source\Game\source\Player\Projectile.h">
       <Filter>Player</Filter>
     </ClInclude>
+    <ClInclude Include="..\Source\Game\source\UI\Pause.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Source\Game\source\BaseClass\SpriteObject.cpp">
+      <Filter>BaseClass</Filter>
+    </ClCompile>
     <ClCompile Include="..\Source\Game\source\Enemy\Enemy.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
@@ -87,11 +96,11 @@
     <ClCompile Include="..\Source\Game\source\Player\Player.cpp">
       <Filter>Player</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\Game\source\UI\Pause.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
     <ClCompile Include="..\Source\Game\source\Player\Projectile.cpp">
       <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Game\source\UI\Pause.cpp">
+      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

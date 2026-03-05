@@ -156,6 +156,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\Source\Game\source\BaseClass\SpriteObject.h" />
     <ClInclude Include="..\Source\Game\source\Collisions\AABB3D.h" />
     <ClInclude Include="..\Source\Game\source\Collisions\Line.h" />
     <ClInclude Include="..\Source\Game\source\Collisions\LineVolume.h" />
@@ -177,6 +178,7 @@
     <ClInclude Include="..\Source\Game\source\UI\Pause.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Source\Game\source\BaseClass\SpriteObject.cpp" />
     <ClCompile Include="..\Source\Game\source\Enemy\Enemy.cpp" />
     <ClCompile Include="..\Source\Game\source\EnvironmentObjs\EnvironmentObject.cpp" />
     <ClCompile Include="..\Source\Game\source\GameWorld.cpp" />
